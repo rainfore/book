@@ -42,15 +42,14 @@ Good:
 .item {}
 ```
 
-## margin问题
+## 关于间距
 
-有三种：
+### 直接加margin
 - 全部向前：首个组件不可控
 - +向前：不可控
-- 全部向后
-
-选择：
 - 全部向后，某些情况下消除最后
+
+### 用一个表维护两个组件之间的margin关系
 
 ## 属性的好处
 
@@ -104,3 +103,26 @@ Good:
 .modal .modal_523523 { // 2
     background: red;
 }
+
+### 为什么不用scoped
+- 作用域有提升
+``` css
+    .u-btn.z-active {}
+    .u-btn[data-v-abcdef] {}
+```
+- 有被影响的风险
+
+## 一个文件中，一种选择器只有一种rule
+
+会处理掉
+
+Bad:
+``` css
+.root[color="primary"] {}
+
+.root[color="primary"] {}
+```
+
+## 关于水平和垂直的组件
+
+horizontal vertical 看成一个组件属性的两个值

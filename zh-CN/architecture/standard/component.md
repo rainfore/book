@@ -79,3 +79,27 @@ good
     </div>
 </slot>
 ```
+
+## 组件继承
+
+异名继承
+
+HTML -> 存在则覆盖
+JS -> extend增加
+CSS -> @import增加
+MD -> 存在则覆盖
+
+同名继承
+
+HTML -> 存在则覆盖
+JS -> export继承
+CSS -> 直接补充 or @import增加
+MD -> 存在则覆盖
+
+### 直接补充 vs @import增加
+
+@import增加：
+- 思路清晰bug少
+- 代码要复制几份
+- hash值不好追踪
+- 要手动添加@import
